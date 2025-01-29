@@ -1,0 +1,560 @@
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+    <style>
+/* Set background image for the entire page */
+body {
+    background-image: url('images/background-about_us.jfif'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+}
+
+/* Set up box container to align About Us and Our Story */
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Mengurangkan jarak antara gambar dan teks */
+    background-color: rgba(255, 255, 255, 0.675);
+    border-radius: 12px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px; /* Menambah padding untuk ruang di sekitar gambar dan teks */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Untuk bahagian About Us - Gambar di kiri dan teks di kanan */
+.about-us-container {
+    flex-direction: row; /* Susunan: gambar kiri, teks kanan */
+}
+
+/* Untuk bahagian Our Story - Gambar di kanan dan teks di kiri */
+.our-story-container {
+    flex-direction: row-reverse; /* Susunan: gambar kanan, teks kiri */
+}
+
+/* Gambar dalam About Us dan Our Story */
+.box-container img {
+    width: 350px; /* Ukuran gambar boleh diubah */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Teks dalam About Us dan Our Story */
+.box-content {
+    max-width: 1000px;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Tajuk untuk About Us dan Our Story */
+.box-content h3 {
+    font-size: 1.5rem;
+    color: brown;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Styling untuk Key Milestones */
+.box-content ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.box-content h4 {
+    font-size: 1.2rem;
+    color: brown;
+}
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+/* Styling untuk Mission & Vision */
+.mission-vision-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Ruang antara kotak */
+    margin: 20px auto;
+    width: 70%; /* Lebar 90% dari halaman */
+    padding: 20px;
+}
+
+.mission-vision-box {
+    flex: 1; /* Membolehkan setiap kotak menggunakan ruang yang sama */
+    background-color: #d1bea8;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.mission-vision-box h3 {
+    color: brown;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.mission-vision-box p {
+    color: black;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: justify;
+}
+/* Styling untuk table */
+.table-container {
+    background-color:  rgba(255, 255, 255, 0.675);
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk tajuk dalam box-container */
+.box-container h2 {
+    color: brown; /* Ubah warna teks kepada coklat gelap */
+    font-size: 2rem;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box-container {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Styling untuk table */
+.team-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Styling untuk table header */
+.team-table th {
+    background-color: #d1bea8;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+/* Styling untuk table cells */
+.team-table td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #f9f3eb;
+    color: #333;
+}
+
+/* Styling untuk baris bergilir */
+.team-table tr:nth-child(even) td {
+    background-color: #f1e3d1;
+}
+
+.team-table tr:nth-child(odd) td {
+    background-color: #f9f3eb;
+}
+
+/* Styling untuk hover pada baris */
+.team-table tr:hover td {
+    background-color: #e5d0a4;
+}
+
+/* Styling untuk gambar dalam table */
+.team-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling untuk link dalam table (email dan phone number) */
+.team-table a {
+    color: blue;
+    text-decoration: none;
+}
+
+.team-table a:hover {
+    text-decoration: underline;
+}
+/* Careers Section */
+.careers-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Set background color */
+    padding: 40px 20px;
+    border-radius: 12px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+/* Styling untuk animasi fade-in-fade-out */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.careers-container h2 {
+    font-size: 2rem;
+    color: brown;
+    text-align: center;
+    animation: fadeInOut 4s ease-in-out infinite; /* Animasi berlangsung 4 saat dan ulang */
+}
+
+.careers-box {
+    background-color: #f9f3eb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.careers-box h3 {
+    font-size: 1.5rem;
+    color: brown;
+}
+
+.careers-box ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.careers-box ol li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.careers-box h4 {
+    font-size: 1.2rem;
+    color: brown;
+    margin-top: 20px;
+}
+
+.careers-box a {
+    color: #e94e77;
+    text-decoration: none;
+}
+
+.careers-box a:hover {
+    text-decoration: underline;
+}
+    </style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+<body>
+    <div class="navbar">
+        <a href="index.html" target="_self">Home</a>
+        <a href="about_us.html" target="_self">About Us</a>
+        <a href="products_beryls.html" target="_self">Products</a>
+        <a href="beryls_gourmet.html" target="_self">Beryl's Gourmet</a>
+        <a href="gallery_beryls.html" target="_self">Gallery</a>
+        <a href="store_location.html" target="_self">Store Location</a>
+        <a href="contact_us.html" target="_self">Contact Us</a>
+    </div>
+
+    <div id="clock"></div>
+
+    <script>
+        // Function to update the clock every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM'; // Check if it's AM or PM
+            
+            // Convert hours from 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 becomes 12
+            
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Format time as HH:MM:SS AM/PM
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Call updateClock every 1000ms (1 second)
+        setInterval(updateClock, 1000);
+
+        // Initialize the clock immediately
+        updateClock();
+    </script>
+
+
+    <h1 style="text-align: center; color: beige; font-size: 5rem; font-family: 'Great Vibes' italic ;">GET TO KNOW US</h1>
+
+    <!-- About Us Section -->
+    <div class="box-container about-us-container">
+        <img src="video/about_us.gif" alt="about us">
+        <div class="box-content">
+            <h3 style="color: brown;">𓆩♡𓆪 ABOUT US 𓆩♡𓆪</h3>
+            <p>
+                <strong>Beryl's Chocolate</strong> is a Malaysian brand that is well known for making <strong>high-quality chocolates</strong>. Since its beginning, Beryl's has been dedicated to 
+                creating <em>delicious</em> and <em>unique chocolate products</em> that are enjoyed by people of all ages. The company uses only the <strong>finest ingredients</strong>, making sure 
+                that every piece of chocolate is <em>rich in taste and smooth in texture</em>. Beryl's offers a variety of chocolate products, including <strong>pralines, truffles, and bars</strong>, 
+                each carefully crafted to deliver a satisfying experience. The brand has become a symbol of <em>luxury and enjoyment</em>, often chosen as a gift for special occasions or as a treat 
+                for everyday enjoyment. Beryl's commitment to quality and excellence has made it one of the most <strong>trusted chocolate brands in Malaysia and beyond</strong>. With its dedication 
+                to <em>creating sweet moments</em>, Beryl's continues to be a favorite among chocolate lovers.
+            </p>
+        </div>
+    </div>
+
+    <!-- Our Story Section -->
+    <div class="box-container our-story-container">
+        <img src="video/ourstory.gif" alt="Our Story">
+        <div class="box-content">
+            <h3 style="color: brown;">𓆩♡𓆪 OUR STORY 𓆩♡𓆪</h3>
+            <p>
+                Our story began with a passion for creating the finest chocolates that bring happiness and joy to people. At Beryl's Chocolate, we started with a simple dream: 
+                to craft chocolates that not only taste amazing but also offer a unique experience. From our humble beginnings in Malaysia, we focused on using the best 
+                ingredients and traditional techniques to create premium chocolate products. Over the years, our dedication to quality has helped us grow and expand, 
+                reaching chocolate lovers far and wide. Our chocolates have become a symbol of luxury, quality, and heartfelt gifting. We take pride in each piece we make, 
+                ensuring that every bite brings a moment of sweetness and pleasure. Beryl's Chocolate is more than just a brand – it's a part of special moments and celebrations, 
+                continuing to make the world a sweeter place one chocolate at a time.
+            </p>
+            <h4>Key Milestones of Beryl's Chocolate:</h4>
+            <ul>
+                <li><strong>1995</strong> – Beryl's Chocolate was founded with the vision of creating premium chocolates.</li>
+                <li><strong>2000</strong> – The company expanded its product range and began gaining recognition in Malaysia.</li>
+                <li><strong>2005</strong> – Beryl's started exporting chocolates to international markets, reaching chocolate lovers around the world.</li>
+                <li><strong>2010</strong> – The brand launched new luxury chocolate collections, becoming a symbol of quality gifting.</li>
+                <li><strong>2015</strong> – Beryl's Chocolate was recognized for its commitment to quality, receiving several industry awards.</li>
+                <li><strong>2020</strong> – Continued growth with new product innovations and a broader international presence.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mission and Vision Section -->
+<div class="mission-vision-container">
+    <!-- Mission Box -->
+    <div class="mission-vision-box">
+        <h3>˚₊· ͟͟͞͞➳❥ MISSION</h3>
+            <p>
+                At Beryl's Chocolate, our mission is to deliver the finest chocolate products that create unforgettable experiences. We aim to use the best ingredients 
+                to craft premium chocolates that satisfy our customers' cravings while promoting the values of quality, love, and luxury in every piece we make. Our goal 
+                is to be a symbol of joy, trust, and indulgence for chocolate lovers around the world.
+            </p>
+    </div>
+    
+    <!-- Vision Box -->
+    <div class="mission-vision-box">
+        <h3>˚₊· ͟͟͞͞➳❥ VISION </h3>
+        <p>
+            Our vision is to be the leading chocolate brand known for exceptional quality and unique experiences. We aspire to be the go-to brand for gifting and 
+            celebrating life's sweetest moments, creating a world where every chocolate we make is a testament to our dedication to excellence and love for chocolate. 
+            We envision a future where Beryl's Chocolate brings happiness and joy to people everywhere, making life a little sweeter with every bite.
+        </p>
+    </div>
+</div>
+
+<!-- Team Members Table -->
+<div class="table-container">
+    <h2 style="color: brown; text-align: center;">╔═*.·:·.✧ OUR TEAM ✧.·:·.*═╗</h2>
+
+    <!-- Team Members Table -->
+    <table class="team-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>ID Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="images/gambar-afiq.jpg" alt="Aidil Afiq" class="team-image"></td>
+                <td>MOHAMMAD AIDIL AFIQ</td>
+                <td>CEO</td>
+                <td><a href="mailto:aidilafiq@gmail.com">aidilafiq@gmail.com</a></td>
+                <td><a href="tel:+60143841238">+60143841238</a></td>
+                <td>2022825094</td>
+            </tr>
+            <tr>
+                <td><img src="images/gambar-zana.jpg" alt="Nur Firzanah" class="team-image"></td>
+                <td>NUR FIRZANAH</td>
+                <td>Creative Director</td>
+                <td><a href="mailto:Firzanah@gmail.com">Firzanah@gmail.com</a></td>
+                <td><a href="tel:+60123456780">+60 123 456 780</a></td>
+                <td>2022893936</td>
+            </tr>
+            <tr>
+                <td><img src="images/gambar-isma.jpg" alt="Nur Ismahani" class="team-image"></td>
+                <td>NUR ISMAHANI</td>
+                <td>Marketing Manager</td>
+                <td><a href="mailto:ismahani@gmail.com">ismahani@gmail.com</a></td>
+                <td><a href="tel:+60123456781">+60 123 456 781</a></td>
+                <td>2022483252</td>
+            </tr>
+            <tr>
+                <td><img src="images/gambar-zarith.jpg" alt="Zarith" class="team-image"></td>
+                <td>PUTERI NUR ZARITH FITRI</td>
+                <td>Product Designer</td>
+                <td><a href="mailto:zarith@gmail.com">zarith@gmail.com</a></td>
+                <td><a href="tel:+60123456782">+60 123 456 782</a></td>
+                <td>2022642202</td>
+            </tr>
+            <tr>
+                <td><img src="images/gambar-alisa.jpg" alt="Nuralisa" class="team-image"></td>
+                <td>NURALISA</td>
+                <td>Head of Operations</td>
+                <td><a href="mailto:nuralisa@gmail.com">nuralisa@gmail.com</a></td>
+                <td><a href="tel:+60123456783">+60 123 456 783</a></td>
+                <td>2022619956</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Careers Section -->
+<div class="careers-container">
+    <h2 style="color: brown; text-align: center;">🍫Join Our Team!!</h2>
+    <div class="careers-box">
+        <h3>Current Openings</h3>
+        <p>At Beryl's Chocolate, we're always looking for passionate individuals to join our team and help us create delicious chocolates. If you're excited about working in a dynamic, creative environment, check out the current positions available below:</p>
+
+        <!-- List of job openings -->
+        <ul>
+            <li><strong>Chocolate Production Specialist</strong> – Help us craft the finest chocolates. Apply now!</li>
+            <li><strong>Marketing Coordinator</strong> – Promote our brand and bring sweet moments to customers worldwide. Apply now!</li>
+            <li><strong>Creative Designer</strong> – Work on new packaging and design concepts. Apply now!</li>
+            <li><strong>Customer Support Representative</strong> – Provide excellent service to our loyal customers. Apply now!</li>
+        </ul>
+
+        <h4>Why Join Us?</h4>
+        <p>At Beryl's Chocolate, we offer a collaborative and creative work environment where you can grow your career while contributing to our success. We provide:</p>
+        <ul>
+            <li>Competitive salary and benefits</li>
+            <li>Opportunities for professional growth and development</li>
+            <li>A fun and dynamic team environment</li>
+        </ul>
+        <p>Interested in joining our team? <a href="mailto:careers@berylschoco@gmail.com">Send us your resume!</a></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: Orders & Services -->
+        <div class="footer-column">
+            <h3>Orders & Services</h3>
+            <ul>
+                <li><a href="beryls_gourmet.html">Beryl's Gourmet</a></li>
+                <li><a href="products_beryls.html">Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Information -->
+        <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="gallery_beryls.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact & Support -->
+        <div class="footer-column">
+            <h3>Contact & Support</h3>
+            <ul>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="store_location.html">Store Location</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Logo & Social Media -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <h2>Beryl's<sup>®</sup></h2>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/BerylsMalaysia"><img src="images/fb-removebg-preview.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/berylschocolate/"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@berylschocolate"><img src="images/tiktok-removebg-preview.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2025 Group (....). All rights reserved.</p>
+    <p>We respect your privacy. Your personal data is only used for processing orders and providing the best service. Read more in our
+    <a href="pdf/privacy_policy(1).pdf" style="color: #e94e77; text-decoration: none;">Privacy Policy</a>.</p>
+    <p>Last Update: <span id="last-update"></span></p>
+</footer>
+
+<script>
+    // Mengambil tarikh semasa dan formatkan
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+
+    // Paparkan tarikh kemas kini pada elemen dengan id "last-update"
+    document.getElementById('last-update').textContent = formattedDate;
+</script>
+
+
+<!--back to top button-->
+<button id="backToTop" title="Go to top">🢁</button>
+<script>
+// Get the "Back to Top" button element
+const backToTopButton = document.getElementById("backToTop");
+
+// Function to toggle the visibility of the button based on scroll position
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) {
+        backToTopButton.style.display = "block"; // Show the button
+    } else {
+        backToTopButton.style.display = "none"; // Hide the button
+    }
+});
+
+// Smooth scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,556 @@
+<html>
+<head>
+    <title>Beryl's</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+        /* Lambang Beryl's */
+        header .logo h1 {
+            font-size: 4.8rem;
+            color: #a52a2a;
+            font-family: 'Georgia', serif;
+            margin-left: 7%;
+        }
+        /* Locations Beryl's */
+        .location{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 1100px;
+            height: 90%;
+        }
+        .card {
+            position: relative;
+            width: 48%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 90%;
+            display: block;
+        }
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .card-overlay h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        .card-overlay h2:hover {
+            color: #ff6f61;
+        }
+        @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            gap: 20px;
+            }
+        .card {
+            width: 100%;
+            }
+        }
+        /* Set background image for the entire page */
+        body {
+            background-image: url("images/background-index\(1\).jpg");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        /* Body Fonts */
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .info-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 100px;
+        }
+        .info-text {
+            max-width: 50%;
+        }
+        .info-text h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #c2b8b8;
+        }
+        .info-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #c2b8b8;
+        }
+        .info-image {
+            max-width: 40%;
+        }
+        .info-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+       /* Our Product */
+        .services-section {
+            padding: 1rem;
+            background-color: #d1bea8;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .services-section h2 {
+            font-size: 2rem;
+            color: #0e0d0d;
+            margin-bottom: 1.5rem;
+        }
+        .find-out-more {
+            margin: 1rem ;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .find-out-more a {
+            font-size: 1rem;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .find-out-more a:hover {
+            color: #707477;
+        }
+
+
+        .find-out-more img {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        /* Carousel Container */
+        .carousel {
+            position: relative;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #f5ecc5;
+        }
+        .carousel-track-container {
+            overflow: hidden;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        /* Product Card */
+        .products {
+            flex: 0 0 100%;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .products img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1rem auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .products img:hover {
+            transform: scale(1.05);
+        }
+        .products h3 {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        .products p {
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.4;
+        }
+        /* Carousel Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .carousel-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .carousel-arrow.left {
+            left: 10px;
+        }
+        .carousel-arrow.right {
+            right: 10px;
+        }
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            background-color: #fdfbfa;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .carousel-indicator.active {
+            background-color: #579de2;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .services-section h2 {
+                font-size: 1.75rem;
+            }
+            .products h3 {
+                font-size: 1.1rem;
+            }
+            .products p {
+                font-size: 0.85rem;
+            }
+            .carousel-arrow {
+                font-size: 1.5rem;
+                padding: 0.3rem 0.8rem;
+            }
+        }
+
+</style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html" target="_self">Home</a>
+        <a href="about_us.html" target="_self">About Us</a>
+        <a href="products_beryls.html" target="_self">Products</a>
+        <a href="beryls_gourmet.html" target="_self">Beryl's Gourmet</a>
+        <a href="gallery_beryls.html" target="_self">Gallery</a>
+        <a href="store_location.html" target="_self">Store Location</a>
+        <a href="contact_us.html" target="_self">Contact Us</a>
+    </div>
+
+<!--Area Clock-->
+<div id="clock">
+        <script>
+        // Function to update the clock every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM'; // Check if it's AM or PM
+           
+            // Convert hours from 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 becomes 12
+           
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+
+
+
+            // Format time as HH:MM:SS AM/PM
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+           
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = timeString;
+        }
+            // Call updateClock every 1000ms (1 second)
+            setInterval(updateClock, 1000);
+
+            // Initialize the clock immediately
+            updateClock();
+        </script>
+ </div>
+
+<!--Logo Beryl's-->
+<header>
+        <div class="logo">
+            <h1>Beryl's<sup>®</sup></h1>
+        </div>
+</header>
+
+<div class="info-section">
+        <div class="info-text">
+            <h1>FINE COCOA</h1>
+            <p>
+                Explore our delectable range of gourmet chocolates, meticulously crafted from the world's finest cocoa beans.
+                Our commitment to using premium cocoa ensures that every bite is a divine experience, awakening your senses to the true essence of chocolate.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="images/gambar 2 beryl's.jpg" alt="Beryl's Fine Cocoa">
+        </div>
+</div>
+
+<div class="info-section">
+        <div class="info-text">
+            <h1>AFFORDABLE INDULGENCE</h1>
+            <p>
+                Our dedication to quality means you can enjoy these delicacies without breaking the bank; we offer affordable indulgence without compromising on taste or quality.
+                Discover the magic of our chocolates, where every piece is a testament to our passion for creating decadent delights.
+            </p>  
+        </div>
+        <div class="info-image">
+            <img src="images/coklat indulgence.jpg" alt="Beryl's Fine Cocoa">
+        </div>
+</div>
+
+
+<div class="container">
+        <!-- Beryl's Location -->
+        <div class="card">
+            <a href="store_location.html"><img src="images/bangunan beryl's BUEHE.jpg" alt="Beryl's Location">
+            <div class="card-overlay">
+                <h2>Store Location</h2>
+            </div>
+</div>
+   
+<!-- Beryl's Gourmet -->
+<div class="card">
+            <a href="beryls_gourmet.html"><img src="images/chocolate gourmets 2.jpg" alt="Beryl's Gourmet">
+            <div class="card-overlay">
+                <h2>Beryl's Gourmet</h2>
+            </div>
+        </div>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <h2>Our Products</h2>
+        <div class="find-out-more">
+            <a href="products_beryls.html">Find out more</a>
+            <img src="images/right-arrow.png" alt="Arrow">
+        </div>
+
+    <div class="carousel">
+        <div class="carousel-track-container">
+        <div class="carousel-track">
+                <!-- Product 1 -->
+                <div class="products">
+                    <img src="images/chocolate-product-1.jpg" alt="Product 1">
+                    <h3>Beryl's Crunchy Delights</h3>
+                    <p>Strawberry White Chocolate With Biscuit Bail Coated With Milk Chocolate.</p>
+                </div>
+                <!-- Product 2 -->
+                <div class="products">
+                    <img src="images/chocolate-product-2.jpg" alt="Product 2">
+                    <h3>Beryl's Almond Dark Chocolate</h3>
+                    <p>Dark Chocolate With Almonds.</p>
+                </div>
+                <!-- Product 3 -->
+                <div class="products">
+                    <img src="images/cookies-product-1.jpg" alt="Product 3">
+                    <h3>Beryl's Waffle Cookies</h3>
+                    <p>With Gianduja Milk Chocolate.</p>
+                </div>
+                <!-- Product 4 -->
+                <div class="products">
+                    <img src="images/cookies-product-2.jpg" alt="Product 4">
+                    <h3>Sand Cookies Delights</h3>
+                    <p>Wholegrain Cookies With Strawberry White Chocolate.</p>
+                </div>
+                <!-- Product 5 -->
+                <div class="products">
+                    <img src="images/gifts-product-1.jpg" alt="Product 5">
+                    <h3>Beryl's Signature Chocolate Gift Bag</h3>
+                    <p>Come Up With A Various Type Of Chocolate.</p>
+                </div>
+                <!-- Product 6 -->
+                <div class="products">
+                    <img src="images/gifts-product-2.jpg" alt="Product 6">
+                    <h3>Beryl's Malaysia Tourism Chocolate Set with PVC Gift Bag - Twin Tower Series</h3>
+                    <p>Introduce a Beryl's gift with a Malaysia Tourism Symbolic.</p>
+                </div>
+        </div>
+        </div>
+
+<!-- Carousel Arrows -->
+    <div class="carousel-arrow left">&lt;</div>
+    <div class="carousel-arrow right">&gt;</div>
+<!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+        <div class="carousel-indicator"></div>
+    </div>
+
+    </div>
+    </div>
+</section>
+
+
+<!--     -->
+<script>  
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-arrow.right');
+const prevButton = document.querySelector('.carousel-arrow.left');
+const indicators = document.querySelectorAll('.carousel-indicator');
+
+let currentSlide = 0;
+
+function updateSlide(position) {
+    track.style.transform = `translateX(-${position * 100}%)`;
+}
+function updateIndicators() {
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
+}
+nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide(currentSlide);
+    updateIndicators();
+});
+prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide(currentSlide);
+    updateIndicators();
+});
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlide(currentSlide);
+        updateIndicators();
+    });
+});
+</script>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: Orders & Services -->
+        <div class="footer-column">
+            <h3>Orders & Services</h3>
+            <ul>
+                <li><a href="beryls_gourmet.html">Beryl's Gourmet</a></li>
+                <li><a href="products_beryls.html">Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Information -->
+        <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="gallery_beryls.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact & Support -->
+        <div class="footer-column">
+            <h3>Contact & Support</h3>
+            <ul>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="store_location.html">Store Location</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Logo & Social Media -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <h2>Beryl's<sup>®</sup></h2>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/BerylsMalaysia"><img src="images/fb-removebg-preview.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/berylschocolate/"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@berylschocolate"><img src="images/tiktok-removebg-preview.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2025 Group (....). All rights reserved.</p>
+    <p>We respect your privacy. Your personal data is only used for processing orders and providing the best service. Read more in our
+    <a href="pdf/privacy_policy(1).pdf" style="color: #e94e77; text-decoration: none;">Privacy Policy</a>.</p>
+    <p>Last Update: <span id="last-update"></span></p>
+</footer>
+
+<script>
+    // Mengambil tarikh semasa dan formatkan
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+
+    // Paparkan tarikh kemas kini pada elemen dengan id "last-update"
+    document.getElementById('last-update').textContent = formattedDate;
+</script>
+
+
+<!--back to top button-->
+<button id="backToTop" title="Go to top">🢁</button>
+<script>
+// Get the "Back to Top" button element
+const backToTopButton = document.getElementById("backToTop");
+
+// Function to toggle the visibility of the button based on scroll position
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) {
+        backToTopButton.style.display = "block"; // Show the button
+    } else {
+        backToTopButton.style.display = "none"; // Hide the button
+    }
+});
+
+// Smooth scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+</script>
+
+ 
+
+</body>
+</html>
+
+
+
+
+
+
