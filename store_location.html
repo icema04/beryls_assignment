@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beryl's Store Locations</title>
+        <link rel="stylesheet" href="style.css">
+
+<style>
+/* Set background image for the entire page */
+        body {
+            background-image: url('images/BACKGROUND STORE LOCATION.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+        }
+        .white-box {
+            width: 95%;
+            height: 5500px;
+            background-color: rgba(255, 255, 255, 0.675);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.9);
+            margin: 10px auto;
+            color: #2e0000;
+            margin-bottom: 0;
+            padding-top: 1px;
+        }
+        h1 {
+            padding-top: 0;
+            text-align: center;
+            font-family: "Amita", serif;
+            font-size: 70px;
+            text-shadow: 5px 10px 5px rgb(0, 0, 0);
+            padding-bottom: 0;
+            margin-bottom: 0;
+            animation: zoomEffect 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+        .pro-navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+        }
+        .pro-navbar nav {
+            padding: 10px 25px;
+            font-size: 17px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: beige;
+            color: rgb(82, 40, 40);
+            border: none;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            min-width: 200px;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+
+
+
+
+
+
+        .store-locations {
+            padding: 20px;
+        }
+
+
+
+
+
+
+
+
+        .store-container {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    padding: 20px;
+                }
+       
+                .store-card {
+                    background-color: #FAF3E0;
+                    border: 5px solid #D4AF37;
+                    border-radius: 8px;
+                    width: 300px;
+                    padding: 20px;
+                    text-align: center;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    animation: slideInUp 1.5s ease;
+                }
+       
+                .store-card img {
+                    width: 100%;
+                    border-radius: 200px;
+                    margin-bottom: 15px;
+                    height: 200px;
+                    object-fit: cover;
+                }
+       
+                .store-card h2 {
+                   font-size: 18px;
+                   color: #8B0000;
+                   margin: 10px 0;
+                }
+
+
+
+
+
+
+
+
+                .store-card p {
+                   margin: 5px 10px;
+                   color: #555;
+                   font-size: 14px;
+                }
+
+
+
+
+
+
+
+
+                .store-card:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                }
+       
+                .directions-btn {
+                    display: inline-block;
+                    background-color: #8B0000;
+                    color: #fbfaf8;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    margin-top: 15px;
+                    transition: transform 0.3s ease, background-color 0.3s ease;
+                }
+       
+                .directions-btn:hover {
+                    background-color: #a00015;
+                    transform: translateY(-5px);
+                }
+       
+
+
+                .white-box h2 {
+            font-family: "Amita", serif;
+            text-align: center;
+            border: #2e0000 1px;
+            background-color: bisque;
+        }
+
+
+ 
+       
+            @keyframes fadeInOut {
+        0% {
+            opacity: 0.5;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.5;
+        }
+        }
+
+
+                /* Animations */
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+       
+                @keyframes slideInUp {
+                    from {
+                        transform: translateY(50px);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+   
+    </style>
+    </head>
+<body>
+   
+       
+    <section id="store_location"></section>
+    <div class="navbar">
+        <a href="index.html" target="_self">Home</a>
+        <a href="about_us.html" target="_self">About Us</a>
+        <a href="products_beryls.html" target="_self">Products</a>
+        <a href="beryls_gourmet.html" target="_self">Beryl's Gourmet</a>
+        <a href="gallery_beryls.html" target="_self">Gallery</a>
+        <a href="store_location.html" target="_self">Store Location</a>
+        <a href="contact_us.html" target="_self">Contact Us</a>
+    </div>
+
+
+   
+   <!-- Keyboard Shortcuts Notes -->
+<div class="note-container" id="note">
+    <button class="close-btn" onclick="closeNote()">✖</button>
+    <strong>🔹 Quick Navigation:</strong>
+    <ul>
+        <li>🏠 Home |<kbd>Alt + R</kbd></li>
+        <li>🎯 About Us |<kbd>Alt + L</kbd></li>
+        <li>🛍 Products |<kbd>Alt + P</kbd></li>
+        <li>📍 Store Location |<kbd>Alt + M</kbd></li>
+        <li>🖼 Gallery |<kbd>Alt + G</kbd></li>
+        <li>📞 Contact Us |<kbd>Alt + C</kbd></li>
+    </ul>
+    <div class="mac-instruction">🖥 Mac Users: Use <kbd>Control</kbd> + <kbd>Option</kbd> + (alphabet)</div>
+</div>
+
+<script>
+    // Function to close the note box
+    function closeNote() {
+        document.getElementById('note').style.display = 'none';
+    }
+
+    // Keyboard shortcut functionality
+    window.addEventListener('keydown', function(event) {
+        if ((event.altKey && !navigator.platform.match(/Mac/i)) || (event.ctrlKey && event.altKey)) {
+            switch(event.key.toLowerCase()) {
+                case 'r': window.location.href = 'index.html'; break;
+                case 'l': window.location.href = 'about_us.html'; break;
+                case 'p': window.location.href = 'products_beryls.html'; break;
+                case 'm': window.location.href = 'store_location.html'; break;
+                case 'g': window.location.href = 'gallery_beryls.html'; break;
+                case 'c': window.location.href = 'contact_us.html'; break;
+            }
+        }
+    });
+</script>
+
+<!--Clock-->
+<div id="clock"></div>
+<script>
+        // Function to update the clock every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM'; // Check if it's AM or PM
+           
+            // Convert hours from 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 becomes 12
+           
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Format time as HH:MM:SS AM/PM
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+           
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        // Call updateClock every 1000ms (1 second)
+        setInterval(updateClock, 1000);
+
+        // Initialize the clock immediately
+        updateClock();
+</script>
+
+
+<section class="store-locations">
+        <h1><font color= #FF0000:>Beryl's</font> Store Locations</h1>
+        <div class="store-container">
+            <!-- CHOCOLATE SHOP & MUSEUM -->
+            <div class="store-card">
+                <img src="images/CHOCOLATE SHOP & MUSEUM.png" alt="CHOCOLATE SHOP & MUSEUM">
+                <h2>CHOCOLATE SHOP & MUSEUM</h2>
+                <p>No. 10, Jalan Raya 7/1,<br>
+                Kawasan Perindustrian Seri Kembangan,<br>
+                43300 Seri Kembangan, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +6012-310 3563</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sat, 8:30am – 5:30pm<br>
+                Sun, 9:00am – 5:30pm<br>
+                *Except Public Holiday*</p>
+                <a href="https://shorter.gg/lfXOAi" class="directions-btn">View Directions</a>
+            </div>
+            
+            <!-- MITSUI OUTLET -->
+            <div class="store-card">
+                <img src="images/MITSUI OUTLET.png" alt="MITSUI OUTLET">
+                <h2>MITSUI OUTLET</h2>
+                <p>G49, Kuala Lumpur International Airport,<br>
+                64000 Sepang, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-8660 2080</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm</p>
+                <a href="https://shorter.gg/qHYJCf" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- KLIA2 OUTLET -->
+            <div class="store-card">
+                <img src="images/KLIA2 OUTLET.png" alt="KLIA2 OUTLET">
+                <h2>KLIA2 OUTLET</h2>
+                <p>Lot. No. L3-14 & 19, Level 3 Gateway KLIA 2,<br>
+                64000, KLIA Sepang, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-8790 2172</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 7:00am – 10:00pm</p>
+                <a href="https://shorter.gg/nIjyEG" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- SUNWAY PYRAMID OUTLET -->
+             <div class="store-card">
+                <img src="images/SUNWAY PYRAMID OUTLET.png" alt="SUNWAY PYRAMID OUTLET">
+                <h2>SUNWAY PYRAMID OUTLET</h2>
+                <p>Unit No. LG2, K10A, Sunway Pyramid Mall,<br>
+                Jalan PJS 11/15, Bandar Sunway,<br>
+                47500 Petaling Jaya, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-5611 2385</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm</p>
+                <a href="https://shorter.gg/nTYLmu" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- 1 UTAMA OUTLET -->
+             <div class="store-card">
+                <img src="images/1 UTAMA OUTLET.png" alt="1 UTAMA OUTLET">
+                <h2>1 UTAMA OUTLET</h2>
+                <p>Lot. LG212, Lower Ground Floor, 1 Utama Shopping Centre, 1,<br>
+                Lebuh Bandar Utama, Bandar Utama,<br>
+                47800 Petaling Jaya, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-7622 2403</p>
+                <p><strong>Business Hours:</strong><br>
+                Sun – Thu, 10:00am – 10:00pm<br>
+                Fri – Sat, 10:00am – 10:30pm<br>
+                <a href="https://shorter.gg/OWcvBC" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- SUNWAY SKYPARK OUTLET -->
+             <div class="store-card">
+                <img src="images/SUNWAY SKYPARK OUTLET.png" alt="SUNWAY SKYPARK OUTLET">
+                <h2>SUNWAY SKYPARK OUTLET</h2>
+                <p>G10A, G Floor, Sultan Abdul Aziz Shah Airport,<br>
+                Jalan Lapangan Terbang Subang, Subang,<br>
+                47200 Subang, Selangor, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +6012-517 8695</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 7:00am – 11:00pm<br>
+                <a href="https://shorter.gg/voyarA" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- FAHRENHEIT FLAGSHIP STORET -->
+            <div class="store-card">
+                <img src="images/FAHRENHEIT FLAGSHIP STORE.png" alt="FAHRENHEIT FLAGSHIP STORE">
+                <h2>FAHRENHEIT FLAGSHIP STORE</h2>
+                <p>Lot G-36, Fahrenheit 88, 179, Jalan Gading, Bukit Bintang,<br>
+                55100 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-4818 6890</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm</p>
+                <a href="https://shorter.gg/yMUHdr" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- SUNGEI WANG OUTLET -->
+            <div class="store-card">
+                <img src="images/SUNGEI WANG OUTLET.png" alt="SUNGEI WANG OUTLET">
+                <h2>SUNGEI WANG OUTLET</h2>
+                <p>Lot. KG-3, Ground Floor, Sungei Wang Plaza,<br>
+                Jalan Bukit Bintang,<br>
+                55100 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-2110 2397</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 9:00pm<br>
+                <a href="https://shorter.gg/lFMgox" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- LOT10 OUTLET -->
+             <div class="store-card">
+                <img src="images/LOT10 OUTLET.png" alt="LOT10 OUTLET">
+                <h2>LOT10 OUTLET</h2>
+                <p>Lot. G3, Ground Floor, Lot 10 Shopping Centre,<br>
+                50, Jalan Sultan Ismail,<br>
+                50250 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong> </p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/AyjzQa" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- NU SENTRAL OUTLET -->
+             <div class="store-card">
+                <img src="images/NU SENTRAL OUTLET.png" alt="NU SENTRAL OUTLET">
+                <h2>NU SENTRAL OUTLET</h2>
+                <p>Lot LG.41A, Level Lower Ground at Nu Sentral Shopping Centre,<br>
+                Jalan Tun Sambanthan,<br>
+                50470 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-2260 5288</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/phPrwp" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- THE EXCHANGE TRX OUTLET -->
+             <div class="store-card">
+                <img src="images/THE EXCHANGE TRX OUTLET.png" alt="THE EXCHANGE TRX OUTLET">
+                <h2>THE EXCHANGE TRX OUTLET</h2>
+                <p>C350, Concoursel Level Plaza The Exchange TRX, Persiaran TRX,<br>
+                Tun Razak Exchange,<br>
+                55188 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-3051 2152</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/GbAmAW" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- KLCC OUTLET -->
+            <div class="store-card">
+                <img src="images/KLCC OUTLET.png" alt="KLCC OUTLET">
+                <h2>KLCC OUTLET</h2>
+                <p>Lot C-11 & C-12, Level Concourse,<br>
+                Permata Sapura, Kuala Lumpur City Centre,<br>
+                50088 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-4817 2717</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/LPiAsz" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- LALAPORT OUTLET -->
+            <div class="store-card">
+                <img src="images/LALAPORT OUTLET.png" alt="LALAPORT OUTLET">
+                <h2>LALAPORT OUTLET</h2>
+                <p>Lot No. G-13E-3,<br>
+                Ground Floor at Mitsui Shopping Part Lalaport,<br>
+                55100 Kuala Lumpur, Malaysia</p>
+                <p><strong>Tel No.:</strong> +603-4819 6101</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Thu, 11:00am – 9:00pm<br>
+                Fri – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/MEEfIb" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- MID VALLEY OUTLET -->
+            <div class="store-card">
+                <img src="images/MID VALLEY OUTLET.png" alt="images/MID VALLEY OUTLET.png">
+                <h2>MID VALLEY OUTLET</h2>
+                <p>Level LG, Unit 089b,<br>
+                Mid Valley City – Mega Mall, Lingkaran Syed Putra,<br>
+                58000 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-3010 0815</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/WOdmxZ" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- JALAN PANGGONG OUTLET -->
+            <div class="store-card">
+                <img src="images/JALAN PANGGONG OUTLET.png" alt="JALAN PANGGONG OUTLET">
+                <h2>JALAN PANGGONG OUTLET</h2>
+                <p>Lot 18, Jalan Panggong, City Centre,<br>
+                50000 Kuala Lumpur, Malaysia</p>
+                <p><strong>Tel No.:</strong> +603-2022 0713</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 9:00am – 5:30pm</p>
+                <a href="https://shorter.gg/KwZjCk" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- PAVILION KL OUTLET -->
+             <div class="store-card">
+                <img src="images/PAVILION KL OUTLET.png" alt="PAVILION KL OUTLET">
+                <h2>PAVILION KL OUTLET</h2>
+                <p>Lot TL1.108, Pavilion Elite, Bukit Bintang Street,<br>
+                55100 Kuala Lumpur, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +603-2110 0829</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm</p>
+                <a href="https://shorter.gg/EEInGe" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- ALAMANDA PUTRAJAYA OUTLET -->
+            <div class="store-card">
+                <img src="images/ALAMANDA PUTRAJAYA OUTLET.png" alt="ALAMANDA PUTRAJAYA OUTLET">
+                <h2>ALAMANDA PUTRAJAYA OUTLET</h2>
+                <p>Jalan Alamanda, Presint 1,<br>
+                62000 Putrajaya,<br>
+                Wilayah Persekutuan Putrajaya, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +6012-551 8695</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/MlNNNv" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- IOI CITY MALL OUTLET -->
+            <div class="store-card">
+                <img src="images/IOI CITY MALL OUTLET.png" alt="IOI CITY MALL OUTLET">
+                <h2>IOI CITY MALL OUTLET</h2>
+                <p>LG-41B Lower Ground Floor, IOI City Mall,<br>
+                Lebuh IRC, IOI Resort City,<br>
+                62502 Putrajaya, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +603-8326 0161</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/EDvvsA" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- GURNEY PLAZA OUTLET -->
+            <div class="store-card">
+                <img src="images/GURNEY PLAZA OUTLET.png" alt="GURNEY PLAZA OUTLET">
+                <h2>GURNEY PLAZA OUTLET</h2>
+                <p>170-B1-09A, Basement One,<br>
+                Plaza Gurney, Persiaran Gurney,<br>
+                10250 Penang, Malaysia.</p>
+                <p><strong>Tel No.:</strong> </p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/qtqsHF" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- PENANG SENTRAL OUTLET -->
+            <div class="store-card">
+                <img src="images/PENANG SENTRAL OUTLET.png" alt="PENANG SENTRAL OUTLET">
+                <h2>PENANG SENTRAL OUTLET</h2>
+                <p>L3-05, Terminal Pengangkutan Penang Sentral,<br>
+                Jalan Bagan Dalam, Bagan Dalam,<br>
+                12100 Butterworth, Penang, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +604-323 7868</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 7:00pm<br>
+                <a href="https://shorter.gg/dAxnKf" class="directions-btn">View Directions</a>
+            </div>
+
+              <!-- DESIGN VILLAGE OUTLET -->
+              <div class="store-card">
+                <img src="images/DESIGN VILLAGE OUTLET.png" alt="DESIGN VILLAGE OUTLET">
+                <h2>DESIGN VILLAGE OUTLET</h2>
+                <p>Lot. G-144, Design Village Outlet Mall,<br>
+                733, Jalan Cassia Barat 2,<br>
+                14110 Bandar Cassia, Penang, Malaysia.</p>
+                <p><strong>Tel No.:</strong>   +604-589 9018</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 11:00am – 10:00pm<br>
+                <a href="https://shorter.gg/hdzvhu" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- CHOCOLATE STORY OUTLET -->
+             <div class="store-card">
+                <img src="images/CHOCOLATE STORY OUTLET.png" alt="CHOCOLATE STORY OUTLET">
+                <h2>CHOCOLATE STORY OUTLET</h2>
+                <p>5, Love Lane,<br>
+                10200 Penang, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +604-229 3777</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 7:00pm</p>
+                <a href="https://shorter.gg/ypDVSy" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- PENANG LEBUH LEITH OUTLET -->
+            <div class="store-card">
+                <img src="images/PENANG LEBUH LEITH OUTLET.png" alt="PENANG LEBUH LEITH OUTLET">
+                <h2>PENANG LEBUH LEITH OUTLET</h2>
+                <p>22, Lebuh Leith, George Town,<br>
+                10200 Penang, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +604-229 0334</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 7:00pm</p>
+                <a href="https://shorter.gg/NEjwri" class="directions-btn">View Directions</a>
+            </div>
+
+              <!-- EAST COAST MALL OUTLET -->
+              <div class="store-card">
+                <img src="images/EAST COAST MALL OUTLET.png" alt="EAST COAST MALL OUTLET">
+                <h2>EAST COAST MALL OUTLET</h2>
+                <p>L2-26/27, Level Two, Jalan Putra Square 6,<br>
+                Putra Square, 25200 Kuantan, Pahang, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +609-513 4882</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm</p>
+                <a href="https://shorter.gg/XfnPLC" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- MELAKA OUTLET -->
+             <div class="store-card">
+                <img src="images/MELAKA OUTLET.png" alt="MELAKA OUTLET">
+                <h2>MELAKA OUTLET</h2>
+                <p>60, Jalan Hang Jebat,<br>
+                75200 Melaka, Malaysia.</p>
+                <p><strong>Tel No.:</strong> +606-288 4995</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Thu, 10:00am – 6:30pm<br>
+                Fri – Sun, 10:00am – 10:00pm<br>
+                *Public Holiday, 10:00am – 10.00pm*</p>
+                <a href="https://shorter.gg/IMzTWn" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- SENAI AIRPORT OUTLET -->
+            <div class="store-card">
+                <img src="images/SENAI AIRPORT OUTLET.png" alt="SENAI AIRPORT OUTLETT">
+                <h2>SENAI AIRPORT OUTLET</h2>
+                <p>Lot KA06, Ground Floor,<br>
+                Senai International Airport,<br>
+                81250 Johor, Malaysia.</p>
+                <p><strong>Tel No.:</strong>    +6012-553 8695</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 8:00am – 9:00pm<br>
+                <a href="https://shorter.gg/vQgwrn" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- JALAN TAN HIOK NEE OUTLET -->
+            <div class="store-card">
+                <img src="images/JALAN TAN HIOK NEE OUTLET.png" alt="JALAN TAN HIOK NEE OUTLET">
+                <h2>JALAN TAN HIOK NEE OUTLET</h2>
+                <p>No. 29, Jalan Tan Hiok Nee,<br>
+                80000 Johor Baharu, Johor, Malaysia.</p>
+                <p><strong>Tel No.:</strong>  +607-207 3543</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Thu, 9:00am – 5:30pm<br>
+                Fri – Sat, 9:00am – 8:00pm<br>
+                Sun, 9:00am – 8.00pm</p>
+                <a href="https://shorter.gg/llQnfB" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- HAJI LANE CHOCOLATE STORY -->
+             <div class="store-card">
+                <img src="images/HAJI LANE CHOCOLATE STORY.png" alt="HAJI LANE CHOCOLATE STORY">
+                <h2>HAJI LANE CHOCOLATE STORY</h2>
+                <p>15, Haji Lane, 189208 Singapore.</p>
+                <p><strong>Tel No.:</strong>  +609-513 4882</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 7:00pm</p>
+                <a href="https://shorter.gg/XcVHNt" class="directions-btn">View Directions</a>
+            </div>
+
+             <!-- HARBOURFRONT CENTRE OUTLET -->
+             <div class="store-card">
+                <img src="images/HARBOURFRONT CENTRE OUTLET.png" alt="HARBOURFRONT CENTRE OUTLET">
+                <h2>HARBOURFRONT CENTRE OUTLET</h2>
+                <p>1 Maritime Square,<br>
+                #01-90A HarbourFront Centre,<br>
+                099253 Singapore.</p>
+                <p><strong>Tel No.:</strong>   +65-6904 4611</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/AkFJCy" class="directions-btn">View Directions</a>
+            </div>
+
+            <!-- WISMA ATRIA OUTLET -->
+            <div class="store-card">
+                <img src="images/WISMA ATRIA OUTLET.png" alt="WISMA ATRIA OUTLET">
+                <h2>WISMA ATRIA OUTLET</h2>
+                <p>435 Orchard Road, #B1-06 Wisma Atria,<br>
+                238877 Singapore.</p>
+                <p><strong>Tel No.:</strong>   +65-6904 4611</p>
+                <p><strong>Business Hours:</strong><br>
+                Mon – Sun, 10:00am – 10:00pm<br>
+                <a href="https://shorter.gg/LLsaTK" class="directions-btn">View Directions</a>
+            </div>
+        </div>
+</section>
+
+<!--famous outlet-->
+<body style="text-align: center;">
+        <div style="background: rgba(255, 255, 255, 0.8); padding: 20px; display: inline-block; border-radius: 10px;">
+            <h3 style="color: brown; text-shadow: 2px 2px 4px black;">Famous Outlet Beryl's</h3>
+            <p style="font-size: 14px; color: black; font-weight: bold;">Drag your mouse over the picture to see 3 famous Beryl's outlet branches.</p>
+            <!-- Image Map Generated by http://www.image-map.net/ -->
+            <img src="images/image-map.png" usemap="#image-map" alt="Outlet Location Map" style="display: block; margin: 0 auto;">
+            <map name="image-map">
+                <area target="_blank" alt="IOI CITY MALL OUTLET (PUTRAJAYA)" title="IOI CITY MALL OUTLET (PUTRAJAYA)" href="https://www.ioicitymall.com.my/about-tenant/?pid=5870" coords="2,1,310,101" shape="rect">
+                <area target="_blank" alt="KLIA2 OUTLET (SELANGOR)" title="KLIA2 OUTLET (SELANGOR)" href="https://gatewayklia2.com.my/directory/store.aspx?c=4&amp;tid=59" coords="0,105,310,205" shape="rect">
+                <area target="_blank" alt="LALAPORT OUTLET (KUALA LUMPUR)" title="LALAPORT OUTLET (KUALA LUMPUR)" href="https://mitsui-shopping-park.com.my/LaLaportBBCC/Brand/brandDetail?id=1365&amp;dian_id=1" coords="0,209,309,309" shape="rect">
+            </map>
+        </div>
+</body>
+     
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: Orders & Services -->
+        <div class="footer-column">
+            <h3>Orders & Services</h3>
+            <ul>
+                <li><a href="beryls_gourmet.html">Beryl's Gourmet</a></li>
+                <li><a href="products_beryls.html">Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Information -->
+        <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="gallery_beryls.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact & Support -->
+        <div class="footer-column">
+            <h3>Contact & Support</h3>
+            <ul>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="store_location.html">Store Location</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Logo & Social Media -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <h2>Beryl's<sup>®</sup></h2>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/BerylsMalaysia"><img src="images/fb-removebg-preview.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/berylschocolate/"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@berylschocolate"><img src="images/tiktok-removebg-preview.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2025 Group (....). All rights reserved.</p>
+    <p>We respect your privacy. Your personal data is only used for processing orders and providing the best service. Read more in our
+    <a href="pdf/privacy_policy(1).pdf" style="color: #e94e77; text-decoration: none;">Privacy Policy</a>.</p>
+    <p>Last Update: <span id="last-update"></span></p>
+</footer>
+
+<script>
+    // Mengambil tarikh semasa dan formatkan
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+
+    // Paparkan tarikh kemas kini pada elemen dengan id "last-update"
+    document.getElementById('last-update').textContent = formattedDate;
+</script>
+
+
+<!--back to top button-->
+<button id="backToTop" title="Go to top">🢁</button>
+<script>
+// Get the "Back to Top" button element
+const backToTopButton = document.getElementById("backToTop");
+
+// Function to toggle the visibility of the button based on scroll position
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) {
+        backToTopButton.style.display = "block"; // Show the button
+    } else {
+        backToTopButton.style.display = "none"; // Hide the button
+    }
+});
+
+// Smooth scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,186 @@
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #100c08;
+    padding: 20px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+}
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: #100c08;
+    transition: none;
+}
+.navbar a:hover {
+    background-color: #8a6f9c;
+    transform: none;
+}
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-x: hidden; /* Halang scroll kiri-kanan */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #100c08;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    position: relative;
+    margin-top: 200px; /* Sesuaikan nilai ini untuk mengatur jarak dari konten di atasnya */
+    width: 100%;
+    font-size: 14px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.footer-column {
+    flex: 1 1 200px;
+}
+.footer-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #fffcfc;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fdfdfd;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+    color: #5894dd;
+}
+/* Logo Section */
+.footer-logo h2 {
+    font-size: 1.5rem;
+    color: #8b0000;
+    font-family: 'Georgia', serif;
+    margin-bottom: 1rem;
+}
+.footer-social {
+    display: flex;
+    gap: 0.5rem;   
+}
+.footer-social a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+    margin-left: 30px;
+    align-items: center;
+}
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .footer-column {
+        text-align: center;
+    }
+}
+
+#clock {
+    font-size: 1.5rem;
+    color: #e94e77;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #d1bea8;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 20px; /* Position on the left side */
+    top: 70px; /* Distance from top */
+    z-index: 1000;
+}
+
+/* Quick Access keyboard */
+/* Gaya kotak nota di kanan atas */
+   .note-container {
+    position: fixed;
+    right: 10px;
+    top: 80px;  /* Adjust the top position */
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 2px solid brown;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    color: brown;
+    display: block;
+}
+/* Butang tutup */
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+/* Untuk mengubah posisi atas */
+.note-container.adjust-top {
+    top: 100px;  /* Adjust this value to move the note further down */
+}
+
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.974);
+    border: none;
+    color: rgba(0, 0, 0, 0.881);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 17px;
+}
+#backToTop:hover {
+    background-color: rgba(151, 151, 151, 0.763);
+}
+
+
