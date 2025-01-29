@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -285,6 +288,44 @@ body {
         <a href="store_location.html" target="_self">Store Location</a>
         <a href="contact_us.html" target="_self">Contact Us</a>
     </div>
+
+
+<!-- Keyboard Shortcuts Notes -->
+<div class="note-container" id="note">
+    <button class="close-btn" onclick="closeNote()">✖</button>
+    <strong>🔹 Quick Navigation:</strong>
+    <ul>
+        <li>🏠 Home |<kbd>Alt + R</kbd></li>
+        <li>🎯 About Us |<kbd>Alt + L</kbd></li>
+        <li>🛍 Products |<kbd>Alt + P</kbd></li>
+        <li>📍 Store Location |<kbd>Alt + M</kbd></li>
+        <li>🖼 Gallery |<kbd>Alt + G</kbd></li>
+        <li>📞 Contact Us |<kbd>Alt + C</kbd></li>
+    </ul>
+    <div class="mac-instruction">🖥 Mac Users: Use <kbd>Control</kbd> + <kbd>Option</kbd> + (alphabet)</div>
+</div>
+
+<script>
+    // Function to close the note box
+    function closeNote() {
+        document.getElementById('note').style.display = 'none';
+    }
+
+    // Keyboard shortcut functionality
+    window.addEventListener('keydown', function(event) {
+        if ((event.altKey && !navigator.platform.match(/Mac/i)) || (event.ctrlKey && event.altKey)) {
+            switch(event.key.toLowerCase()) {
+                case 'r': window.location.href = 'index.html'; break;
+                case 'l': window.location.href = 'about_us.html'; break;
+                case 'p': window.location.href = 'products_beryls.html'; break;
+                case 'm': window.location.href = 'store_location.html'; break;
+                case 'g': window.location.href = 'gallery_beryls.html'; break;
+                case 'c': window.location.href = 'contact_us.html'; break;
+            }
+        }
+    });
+</script>
+
 
     <div id="clock"></div>
 

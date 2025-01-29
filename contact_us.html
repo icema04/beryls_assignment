@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* Body Styling */
+        body {
+            background-image: url('images/background-index(1).jpg'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        /* Flex Layout for Contact Info and Message Form */
+        .contact-info-container {
+            display: flex;
+            justify-content: space-between; /* Spread both columns horizontally */
+            align-items: flex-start;
+            min-height: 50vh;
+            padding-top: 60px;
+            padding: 40px;
+            gap: 20px; /* Reduce the gap between contact info and message form */
+        }
+
+        /* Styling for Contact Info */
+        .contact-info {
+            width: 48%;
+            padding: 50px;
+            background-color: #D1BEA8; /* Dark Vanilla background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333; /* Text color for readability */
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for Message Us form */
+        .message-us {
+            width: 48%;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .message-us h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .message-us input, .message-us textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .message-us button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .message-us button:hover {
+            background-color: #004d99;
+        }
+        /* Animasi untuk kesan tulisan muncul pada h3 */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Apply animation pada teks h3 sahaja */
+.message-us h3 {
+    overflow: hidden; /* Sembunyikan teks semasa animasi */
+    white-space: nowrap; /* Elakkan teks dari membengkok */
+    border-right: 3px solid #000; /* Penanda untuk kesan tulisan */
+    width: 0; /* Mulakan dengan lebar 0 */
+    animation: typing 4s steps(30) 1s infinite forwards; /* Animasi tulisan berulang */
+}
+
+/* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .modal button {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    .modal button:hover {
+        background-color: #004d99;
+    }
+    
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="index.html" target="_self">Home</a>
+    <a href="about_us.html" target="_self">About Us</a>
+    <a href="products_beryls.html" target="_self">Products</a>
+    <a href="beryls_gourmet.html" target="_self">Beryl's Gourmet</a>
+    <a href="gallery_beryls.html" target="_self">Gallery</a>
+    <a href="store_location.html" target="_self">Store Location</a>
+    <a href="contact_us.html" target="_self">Contact Us</a>
+</div>
+
+<!-- Keyboard Shortcuts Notes -->
+<div class="note-container" id="note">
+    <button class="close-btn" onclick="closeNote()">✖</button>
+    <strong>🔹 Quick Navigation:</strong>
+    <ul>
+        <li>🏠 Home |<kbd>Alt + R</kbd></li>
+        <li>🎯 About Us |<kbd>Alt + L</kbd></li>
+        <li>🛍 Products |<kbd>Alt + P</kbd></li>
+        <li>📍 Store Location |<kbd>Alt + M</kbd></li>
+        <li>🖼 Gallery |<kbd>Alt + G</kbd></li>
+        <li>📞 Contact Us |<kbd>Alt + C</kbd></li>
+    </ul>
+    <div class="mac-instruction">🖥 Mac Users: Use <kbd>Control</kbd> + <kbd>Option</kbd> + (alphabet)</div>
+</div>
+
+<script>
+    // Function to close the note box
+    function closeNote() {
+    document.getElementById('note').style.display = 'none';
+    }
+
+    // Keyboard shortcut functionality
+    window.addEventListener('keydown', function(event) {
+        if ((event.altKey && !navigator.platform.match(/Mac/i)) || (event.ctrlKey && event.altKey)) {
+            switch(event.key.toLowerCase()) {
+                case 'r': window.location.href = 'index.html'; break;
+                case 'l': window.location.href = 'about_us.html'; break;
+                case 'p': window.location.href = 'products_beryls.html'; break;
+                case 'm': window.location.href = 'store_location.html'; break;
+                case 'g': window.location.href = 'gallery_beryls.html'; break;
+                case 'c': window.location.href = 'contact_us.html'; break;
+            }
+        }
+    });
+</script>
+
+<!--Time-->
+<div id="clock"></div>
+<script>
+        // Function to update the clock every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM'; // Check if it's AM or PM
+            
+            // Convert hours from 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 becomes 12
+            
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Format time as HH:MM:SS AM/PM
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = timeString;
+        }
+
+            // Call updateClock every 1000ms (1 second)
+            setInterval(updateClock, 1000);
+
+            // Initialize the clock immediately
+            updateClock();
+</script>
+
+<!--Content about contact us-->
+
+<h1 style="text-align: center; color: beige; font-size: 5rem; font-family: 'Great Vibes' italic ;">CONTACT US</h1>
+
+<!-- Contact Info Section -->
+<div class="contact-info-container">
+    <div class="contact-info">
+        <p><strong>Beryl's Chocolate & Confectionery Sdn. Bhd.</strong><br>
+        200001003397 (506002-U)</p>
+            
+        <p><strong>Beryl's Marketing Sdn. Bhd.</strong><br>
+        199501016271 (345473-U)</p>
+    
+        <p><strong>Tel:</strong> +(60)3-8943 6136<br>
+            <strong>Fax:</strong> +(60)3-8958 6021<br>
+           <strong>Email:</strong> <a href="mailto:berylschoco@gmail.com">berylschoco@gmail.com</a></p>
+    
+        <p>No. 2, Jalan Raya 7/1,<br>
+            Kawasan Perindustrian Seri Kembangan,<br>
+           43300 Seri Kembangan, Selangor, Malaysia.</p>
+
+        <p><strong>Waktu Operasi:</strong><br>
+            Isnin - Jumaat: 9.00 pagi - 5.00 petang<br>
+           Sabtu & Ahad: Tutup</p>
+</div>
+
+<!-- Message Us Form Section -->
+<div class="message-us">
+        <h3>Message Us</h3>
+        <form id="messageForm" action="send_message.php" method="POST">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        </div>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="modal">
+        <div class="modal-content">
+            <p>Your message has been sent successfully!</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: Orders & Services -->
+        <div class="footer-column">
+            <h3>Orders & Services</h3>
+            <ul>
+                <li><a href="beryls_gourmet.html">Beryl's Gourmet</a></li>
+                <li><a href="products_beryls.html">Products</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 2: Information -->
+        <div class="footer-column">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="gallery_beryls.html">Gallery</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact & Support -->
+        <div class="footer-column">
+            <h3>Contact & Support</h3>
+            <ul>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="store_location.html">Store Location</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Logo & Social Media -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <h2>Beryl's<sup>®</sup></h2>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/BerylsMalaysia"><img src="images/fb-removebg-preview.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/berylschocolate/"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@berylschocolate"><img src="images/tiktok-removebg-preview.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2025 Group (....). All rights reserved.</p>
+    <p>We respect your privacy. Your personal data is only used for processing orders and providing the best service. Read more in our
+    <a href="pdf/privacy_policy(1).pdf" style="color: #e94e77; text-decoration: none;">Privacy Policy</a>.</p>
+    <p>Last Update: <span id="last-update"></span></p>
+    
+</footer>
+
+<script>
+    // Mengambil tarikh semasa dan formatkan
+    const date = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+
+    // Paparkan tarikh kemas kini pada elemen dengan id "last-update"
+    document.getElementById('last-update').textContent = formattedDate;
+</script>
+
+
+<!--back to top button-->
+<button id="backToTop" title="Go to top">🢁</button>
+<script>
+// Get the "Back to Top" button element
+const backToTopButton = document.getElementById("backToTop");
+
+// Function to toggle the visibility of the button based on scroll position
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 20) {
+        backToTopButton.style.display = "block"; // Show the button
+    } else {
+        backToTopButton.style.display = "none"; // Hide the button
+    }
+});
+
+// Smooth scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+</script>
+</body>
+</html>
+
+
+
