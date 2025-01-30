@@ -19,131 +19,19 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        /* Flex Layout for Contact Info and Message Form */
-        .contact-info-container {
-            display: flex;
-            justify-content: space-between; /* Spread both columns horizontally */
-            align-items: flex-start;
-            min-height: 50vh;
-            padding-top: 60px;
-            padding: 40px;
-            gap: 20px; /* Reduce the gap between contact info and message form */
-        }
-
-        /* Styling for Contact Info */
         .contact-info {
-            width: 48%;
-            padding: 50px;
-            background-color: #D1BEA8; /* Dark Vanilla background */
+            text-align: center;
+            background-color: #D1BEA8;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            color: #333; /* Text color for readability */
+            margin-left: 100px;
+            margin-right: 100px;
         }
-
-        .contact-info p {
-            margin: 10px 0;
-            line-height: 1.6;
+        a {
             color: #333;
-        }
-
-        .contact-info a {
-            color: #0066cc;
             text-decoration: none;
         }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Styling for Message Us form */
-        .message-us {
-            width: 48%;
-            padding: 50px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .message-us h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .message-us input, .message-us textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .message-us button {
-            padding: 10px 20px;
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .message-us button:hover {
-            background-color: #004d99;
-        }
-        /* Animasi untuk kesan tulisan muncul pada h3 */
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-/* Apply animation pada teks h3 sahaja */
-.message-us h3 {
-    overflow: hidden; /* Sembunyikan teks semasa animasi */
-    white-space: nowrap; /* Elakkan teks dari membengkok */
-    border-right: 3px solid #000; /* Penanda untuk kesan tulisan */
-    width: 0; /* Mulakan dengan lebar 0 */
-    animation: typing 4s steps(30) 1s infinite forwards; /* Animasi tulisan berulang */
-}
-
-/* Modal Styles */
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-    }
-    .modal-content {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    .modal button {
-        background-color: #0066cc;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-    .modal button:hover {
-        background-color: #004d99;
-    }
-    
     </style>
 </head>
 
@@ -166,7 +54,7 @@
     <ul>
         <li>🏠 Home |<kbd>Alt + R</kbd></li>
         <li>🎯 About Us |<kbd>Alt + L</kbd></li>
-        <li>Beryls Gourmet |<kbd>Alt + T</kbd></li>
+        <li>🍫Beryls Gourmet |<kbd>Alt + T</kbd></li>
         <li>🛍 Products |<kbd>Alt + P</kbd></li>
         <li>📍 Store Location |<kbd>Alt + M</kbd></li>
         <li>🖼 Gallery |<kbd>Alt + G</kbd></li>
@@ -234,46 +122,24 @@
 
 <h1 style="text-align: center; color: beige; font-size: 5rem; font-family: 'Great Vibes' italic ;">CONTACT US</h1>
 
-<!-- Contact Info Section -->
-<div class="contact-info-container">
-    <div class="contact-info">
-        <p><strong>Beryl's Chocolate & Confectionery Sdn. Bhd.</strong><br>
+<div class="contact-info">
+    <p><strong>Beryl's Chocolate & Confectionery Sdn. Bhd.</strong><br>
         200001003397 (506002-U)</p>
-            
-        <p><strong>Beryl's Marketing Sdn. Bhd.</strong><br>
+    
+    <p><strong>Beryl's Marketing Sdn. Bhd.</strong><br>
         199501016271 (345473-U)</p>
-    
-        <p><strong>Tel:</strong> +(60)3-8943 6136<br>
-            <strong>Fax:</strong> +(60)3-8958 6021<br>
-           <strong>Email:</strong> <a href="mailto:berylschoco@gmail.com">berylschoco@gmail.com</a></p>
-    
-        <p>No. 2, Jalan Raya 7/1,<br>
-            Kawasan Perindustrian Seri Kembangan,<br>
-           43300 Seri Kembangan, Selangor, Malaysia.</p>
 
-        <p><strong>Waktu Operasi:</strong><br>
-            Isnin - Jumaat: 9.00 pagi - 5.00 petang<br>
-           Sabtu & Ahad: Tutup</p>
-</div>
+    <p><strong>Tel:</strong> +(60)3-8943 6136<br>
+        <strong>Fax:</strong> +(60)3-8958 6021<br>
+       <strong>Email:</strong> <a href="mailto:berylschoco@gmail.com">berylschoco@gmail.com</a></p>
 
-<!-- Message Us Form Section -->
-<div class="message-us">
-        <h3>Message Us</h3>
-        <form id="messageForm" action="send_message.php" method="POST">
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        </div>
-</div>
+    <p>No. 2, Jalan Raya 7/1,<br>
+        Kawasan Perindustrian Seri Kembangan,<br>
+       43300 Seri Kembangan, Selangor, Malaysia.</p>
 
-<!-- Success Modal -->
-<div id="successModal" class="modal">
-        <div class="modal-content">
-            <p>Your message has been sent successfully!</p>
-            <button onclick="closeModal()">Close</button>
-        </div>
+    <p><strong>Waktu Operasi:</strong><br>
+        Isnin - Jumaat: 9.00 pagi - 5.00 petang<br>
+       Sabtu & Ahad: Tutup</p>
 </div>
 
 <!-- Footer -->
