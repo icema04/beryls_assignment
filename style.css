@@ -147,6 +147,7 @@ footer {
     font-size: 14px;
     color: brown;
     display: block;
+    z-index: 9999;
 }
 /* Butang tutup */
 .close-btn {
