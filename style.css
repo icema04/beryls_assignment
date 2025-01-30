@@ -3,7 +3,7 @@
     background-color: #100c08;
     padding: 20px 20px;
     text-align: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -42,7 +42,7 @@ footer {
     color: white;
     text-align: center;
     padding: 15px 20px;
-    position: relative;
+    position: sticky;
     margin-top: 200px; /* Sesuaikan nilai ini untuk mengatur jarak dari konten di atasnya */
     width: 100%;
     font-size: 14px;
