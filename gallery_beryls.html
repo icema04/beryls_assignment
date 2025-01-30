@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<style>
+body {
+    background-image: url('images/background\ _of\ gallery.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .description {
+    opacity: 1;
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}
+gallery-feedback
+/* Apply general styling */
+.container {
+  font-family: Arial, sans-serif;
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #dc0b0b;
+}
+
+/*feedback*/
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.testimonial-card {
+  background-color: #f4f4f4;
+  max-width: 800px;
+  margin-left: 80px;
+  margin-right: 50px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlideUp 0.8s forwards;
+}
+
+.testimonial-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.testimonial-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.testimonial-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.testimonial-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.customer-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.customer-name {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.customer-feedback {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.customer-photo:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<body>
+
+  <!-- Navbar at the top -->
+  <div class="navbar">
+    <a href="index.html" target="_self">Home</a>
+    <a href="about_us.html" target="_self">About Us</a>
+    <a href="products_beryl's.html" target="_self">Products</a>
+    <a href="beryl's_gourmet.html" target="_self">Beryl's Gourmet</a>
+    <a href="gallery_beryl's.html" target="_self">Gallery</a>
+    <a href="store_location.html" target="_self">Store Location</a>
+    <a href="contact_us.html" target="_self">Contact Us</a>
+</div>
+
+<!-- Keyboard Shortcuts Notes -->
+<div class="note-container" id="note">
+    <button class="close-btn" onclick="closeNote()">✖</button>
+    <strong>🔹 Quick Navigation:</strong>
+    <ul>
+    <li>🏠 Home |<kbd>Alt + R</kbd></li>
+    <li>🎯 About Us |<kbd>Alt + L</kbd></li>
+    <li>🛍 Products |<kbd>Alt + P</kbd></li>
+    <li>📍 Store Location |<kbd>Alt + M</kbd></li>
+    <li>🖼 Gallery |<kbd>Alt + G</kbd></li>
+    <li>📞 Contact Us |<kbd>Alt + C</kbd></li>
+    </ul>
+    <div class="mac-instruction">🖥 Mac Users: Use <kbd>Control</kbd> + <kbd>Option</kbd> + (alphabet)</div>
+</div>
+
+<script>
+// Function to close the note box
+function closeNote() {
+document.getElementById('note').style.display = 'none';
+}
+
+// Keyboard shortcut functionality
+window.addEventListener('keydown', function(event) {
+if ((event.altKey && !navigator.platform.match(/Mac/i)) || (event.ctrlKey && event.altKey)) {
+    switch(event.key.toLowerCase()) {
+        case 'r': window.location.href = 'index.html'; break;
+        case 'l': window.location.href = 'about_us.html'; break;
+        case 'p': window.location.href = 'products_beryls.html'; break;
+        case 'm': window.location.href = 'store_location.html'; break;
+        case 'g': window.location.href = 'gallery_beryls.html'; break;
+        case 'c': window.location.href = 'contact_us.html'; break;
+    }
+}
+});
+</script>
+
+<!--clock-->
+<div id="clock"></div>
+<script>
+        // Function to update the clock every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm = hours >= 12 ? 'PM' : 'AM'; // Check if it's AM or PM
+            
+            // Convert hours from 24-hour format to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // 0 becomes 12
+            
+            // Add leading zeros if minutes or seconds are less than 10
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Format time as HH:MM:SS AM/PM
+            const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+            
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = timeString;
+        }
+
+            // Call updateClock every 1000ms (1 second)
+            setInterval(updateClock, 1000);
+
+            // Initialize the clock immediately
+            updateClock();
+</script>
+
+<h1 style="color: red; text-align: center; margin-top: 100px; size: 1.5 rem;">THE GLIMPSE OF MEMORIES</h1>
+
+<!-- Gallery Section -->
+<div class="gallery-container">
+  <div class="gallery-item">
+      <a href="images/beryl's_camior.jpg">
+          <img src="images/beryl's_camior.jpg" alt="CAMIOR CHOCOLATE">
+          <div class="description">First Chocolate bar replaced in 1998</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/beryl's_factory Seri Kembangan.webp">
+          <img src="images/beryl's_factory Seri Kembangan.webp" alt="Beryl's factory">
+          <div class="description">Chocolate factory in Seri Kembangan, Selangor (HQ)</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/tiramisu choc.webp">
+          <img src="images/tiramisu choc.webp" alt="Tiramisu flavour">
+          <div class="description">Tiramisu chocolate</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/chocolate_jar.jpg">
+          <img src="images/chocolate_jar.jpg" alt="Beryl's chocolate jar">
+          <div class="description">Beryl's chocolate jar</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/beryl's_museum chocolatee.webp">
+          <img src="images/beryl's_museum chocolatee.webp" alt="Beryl's museum">
+          <div class="description">Beryl's museum chocolate</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/chocolate_beryl's.webp">
+          <img src="images/chocolate_beryl's.webp" alt="chocolate Beryl's">
+          <div class="description">Chocolate beryl's in jar</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/chocolate gift.webp">
+          <img src="images/chocolate gift.webp" alt="Beryl's chocolate gift">
+          <div class="description">Cute chocolate gift for birthday present</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/retail_outlet.webp">
+          <img src="images/retail_outlet.webp" alt="Beryl's retail outlet">
+          <div class="description">First retail outlet opened</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/Beryl's factory_2">
+          <img src="images/Beryl's factory_2" alt="Beryl's second factory">
+          <div class="description">Beryl's second factory launch in Bangi, Selangor</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/beryl's cookies">
+          <img src="images/beryl's cookies" alt="Beryl's cookies">
+          <div class="description">Beryl's cookies factory in Seri Kembangan, Selangor</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/beryl's choc cookies.webp">
+          <img src="images/beryl's choc cookies.webp" alt="Beryl's chocolate cookies">
+          <div class="description">Beryl's chocolate cookies</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/retail across_Malaysia.webp">
+          <img src="images/retail across_Malaysia.webp" alt="retail outlet across Malaysia">
+          <div class="description">Malaysia & Singapore retail outlets</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/KPK price infographic.jpg">
+          <img src="images/KPK price infographic.jpg" alt="Price check from KPK at Beryl's">
+          <div class="description">Beryl's visitor from KPK for price check</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/Wonderland_seri kembangan.jpg">
+          <img src="images/Wonderland_seri kembangan.jpg" alt="Beryl's Seri Kembangan factory">
+          <div class="description">Beryl's wonderland at Seri Kembangan</div>
+      </a>
+  </div>
+
+  <div class="gallery-item">
+      <a href="images/school_trip.png">
+          <img src="images/school_trip.png" alt="Beryl's school trip">
+          <div class="description">Elementary school trip</div>
+      </a>
+  </div>
+</div>
+
+<!--Video embedded-->
+<table align="center" cellpadding="20">
+  <tr>
+    <td>
+      <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/7JJpXl7WKLw?si=o7kYzpjpsoHQTJLF" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+              gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+    </td>
+
+    <td>
+      <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/jArmudQcLxw?si=YfqhMzE1ZYBzABj1" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+              gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+    </td>
+  </tr>
+</table>
+
+<!--video from tiktok-->
+<h1 style="color: red; text-align: center; margin-top: 100px; size: 1.5 rem;">Beryl’s Chocolate: A Sweet Treat You Deserve!</h1>
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <video controls style="width: 20%; height: auto; border: 2px solid; border-radius: 5px;">
+      <source src="video/video1.mp4" type="video/mp4">
+      <source src="video/video1.mov" type="video/quicktime">
+      <source src="video/video1.ogg" type="video/ogg">
+      Your browser does not support the video element.
+  </video>
+  <video controls style="width: 20%; height: auto; border: 2px solid; border-radius: 5px;">
+      <source src="video/video2.mp4" type="video/mp4">
+      <source src="video/video2.mov" type="video/quicktime">
+      <source src="video/video2.ogg" type="video/ogg">
+      Your browser does not support the video element.
+  </video>
+  <video controls style="width: 20%; height: auto; border: 2px solid; border-radius: 5px;">
+    <source src="video/video3.mp4" type="video/mp4">
+    <source src="video/video3.mov" type="video/quicktime">
+    <source src="video/video3.ogg" type="video/ogg">
+    Your browser does not support the video element.
+</video>
+</div>
+
+<!--Feedback customers-->
+<div class="container">
+    <h1 style="color: red; text-align: center; margin-top: 100px; size: 1.5 rem;">What Our Customers Says!</h1>
+
+  <section class="testimonials">
+    <div class="testimonial-card">
+      <img src="images/johhny dave.png" alt="Customer Photo" class="customer-photo">
+      <h3 class="customer-name">Johnny Dave</h3>
+      <p class="customer-feedback">
+        "Amazing product! I have purchased Beryl's in large quantities, and they have never let me down. Highly recommended!"
+      </p>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/sarah macwilson.png" alt="Customer Photo" class="customer-photo">
+      <h3 class="customer-name">Sarah Macwilson</h3>
+      <p class="customer-feedback">
+        "The best online shopping experience I've ever had! Quick delivery and excellent quality. I highly recommend Beryl!"
+      </p>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/kylie.png" alt="Customer Photo" class="customer-photo">
+      <h3 class="customer-name">Kylie</h3>
+      <p class="customer-feedback">
+        "I love the innovative products Beryl offers. Every item I've purchased has exceeded my expectations!"
+      </p>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/paul walker.png" alt="Customer Photo" class="customer-photo">
+      <h3 class="customer-name">Paul Walker</h3>
+      <p class="customer-feedback">
+        "I've been a loyal Beryl customer for years. The products are fantastic, and the customer service is top-notch!"
+      </p>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+      <!-- Column 1: Orders & Services -->
+      <div class="footer-column">
+          <h3>Orders & Services</h3>
+          <ul>
+              <li><a href="beryls_gourmet.html">Beryl's Gourmet</a></li>
+              <li><a href="products_beryls.html">Products</a></li>
+          </ul>
+      </div>
+
+      <!-- Column 2: Information -->
+      <div class="footer-column">
+          <h3>Information</h3>
+          <ul>
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="gallery_beryls.html">Gallery</a></li>
+          </ul>
+      </div>
+
+      <!-- Column 3: Contact & Support -->
+      <div class="footer-column">
+          <h3>Contact & Support</h3>
+          <ul>
+              <li><a href="contact_us.html">Contact Us</a></li>
+              <li><a href="store_location.html">Store Location</a></li>
+          </ul>
+      </div>
+
+      <!-- Column 4: Logo & Social Media -->
+      <div class="footer-column">
+          <div class="footer-logo">
+              <h2>Beryl's<sup>®</sup></h2>
+          </div>
+          <div class="footer-social">
+              <a href="https://www.facebook.com/BerylsMalaysia"><img src="images/fb-removebg-preview.png" alt="Facebook"></a>
+              <a href="https://www.instagram.com/berylschocolate/"><img src="images/ig-removebg-preview.png" alt="Instagram"></a>
+              <a href="https://www.tiktok.com/@berylschocolate"><img src="images/tiktok-removebg-preview.png" alt="TikTok"></a>
+          </div>
+      </div>
+  </div>
+  <p>&copy; 2025 Group (....). All rights reserved.</p>
+  <p>We respect your privacy. Your personal data is only used for processing orders and providing the best service. Read more in our
+  <a href="pdf/privacy_policy(1).pdf" style="color: #e94e77; text-decoration: none;">Privacy Policy</a>.</p>
+  <p>Last Update: <span id="last-update"></span></p>
+</footer>
+
+<script>
+  // Mengambil tarikh semasa dan formatkan
+  const date = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
+  // Paparkan tarikh kemas kini pada elemen dengan id "last-update"
+  document.getElementById('last-update').textContent = formattedDate;
+</script>
+
+
+<!--back to top button-->
+<button id="backToTop" title="Go to top">🢁</button>
+<script>
+// Get the "Back to Top" button element
+const backToTopButton = document.getElementById("backToTop");
+
+// Function to toggle the visibility of the button based on scroll position
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 20) {
+      backToTopButton.style.display = "block"; // Show the button
+  } else {
+      backToTopButton.style.display = "none"; // Hide the button
+  }
+});
+
+// Smooth scroll to the top when the button is clicked
+backToTopButton.addEventListener("click", function () {
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+  });
+});
+</script>
+</body>
+</html>
